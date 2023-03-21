@@ -1,5 +1,5 @@
 {
-    'name': 'Test',
+    'name': 'School',
     'version': '1.0',
     'summary': 'My first module',
     'sequence': 5,
@@ -9,6 +9,9 @@
     'website': 'https://www.odoo.com/app/invoicing',
     'depends': ['base'],
     'data': [
+        'security/ir.model.access.csv',
+        'views/menu.xml',
+        'views/subject.xml',
     ],
     'application': True,
 }

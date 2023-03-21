@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_school_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">school.teacher</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <submenuitem id="menu_school_subjects"
+              name="Teachers"
+              parent="menu_school_operations"
+              action="action_school_teacher"
+              sequence="10"/>
+
+</odoo>
