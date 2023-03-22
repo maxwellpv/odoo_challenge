@@ -1,4 +1,5 @@
 from odoo import api, fields, models
+from datetime import datetime
 
 
 class SchoolSubject(models.Model):
@@ -14,10 +15,14 @@ class SchoolSubject(models.Model):
 class SchoolStudent(models.Model):
     _name = "school.student"
     name = fields.Char(string="Name", required=True)
-    birth_date = fields.Date(string="Birth Date", required=True)
-    age = fields.Integer(string="Age", required=True)
+    birth_date = fields.Date(string='Birth Date', default=datetime.today())
+    age = fields.Integer(string="Age")
     final_exam_grade = fields.Float(string="Final Exam Grade", required=True)
     subject_ids = fields.Many2many('school.subject', string='Subjects')
+
+    @api.onchange('birth_date')
+    def _onchange_age(self):
+        self.age = datetime.today().year - self.birth_date.year
 
 
 class SchoolTeacher(models.Model):

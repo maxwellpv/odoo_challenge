@@ -7,7 +7,7 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <submenuitem id="menu_school_subjects"
+    <menuitem id="menu_school_subjects"
               name="Subjects"
               parent="menu_school_operations"
               action="action_school_subject"
